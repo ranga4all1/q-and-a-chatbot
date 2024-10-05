@@ -163,6 +163,6 @@ cython_debug/
 
 # Added by me
 notebooks/faiss_index/
-notebooks/data
+notebooks/data/
+data/
 commands
-/workspaces/q-and-a-chatbot/data
