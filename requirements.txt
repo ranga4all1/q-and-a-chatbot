@@ -1,0 +1,9 @@
+boto3
+
+# for q-and-a application only
+awscli #for aws cli
+pypdf
+langchain # framework
+langchain-community
+streamlit # for the UI
+faiss-cpu # for vector embeddings
