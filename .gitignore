@@ -163,7 +163,5 @@ cython_debug/
 
 # Added by me
 notebooks/faiss_index/
-notebooks/data/
 faiss_index/
-data/
 commands
