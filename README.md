@@ -112,15 +112,13 @@ Users can expand the dataset by adding or replacing PDF files in this directory 
 
 1. Ensure that all steps from **Prerequisites** section above are completed.
 
-2. Create a folder named `data` and copy your PDF file into it e. g. your resume file in PDF format.
-
-3. Run
+2. Run
 ```
 streamlit run app.py
 ```
  You can now view your Streamlit app in your browser at http://localhost:8501
 
-4. Test:
+3. Test:
 
     - Click on `Vectors Update` button.
     - Type your question and then click LLM output buttons one at a time to get answers.
