@@ -138,16 +138,17 @@ def get_response_llm(llm, vectorstore_faiss, query):
     return answer['answer']
 
 
-llms = [get_llama3_llm, get_titan_lite_llm, get_mistral_llm, get_claude_llm]
+# RAG Flow - Multiple LLMs and questions together
+llms = [get_titan_lite_llm, get_mistral_llm, get_claude_llm, get_llama3_llm]
 
 questions = [
 
-    "Where is Ranga Hande currently located?",
-    # "What is Ranga Hande's profession?",
-    # "What projects has Ranga Hande worked on?",
-    # "Where did Ranga Hande study?",
-    # "What are Ranga Hande's areas of expertise?",
-    # "Has Ranga Hande published any research papers or articles on 'Medium' or 'LinkedIn'?"
+    "Where is Jane Doe currently located?",
+    # "What is Jane Doe's profession?",
+    # "What projects have Jane Doe worked on?",
+    # "Where did Jane Doe study?",
+    # "What are Jane Doe's areas of expertise?",
+    # "Has Jane Doe published any research papers or articles on 'Medium' or 'LinkedIn'?"
 ]
 
 for user_question in questions:

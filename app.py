@@ -58,10 +58,6 @@ def get_vector_store(docs):
     )
     vectorstore_faiss.save_local("faiss_index")
 
-# vectorstore
-# docs = data_ingestion()
-# get_vector_store(docs)
-# faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings, allow_dangerous_deserialization=True)
 
 # Define LLMs to use from aws bedrock
 def get_titan_lite_llm():
@@ -138,36 +134,9 @@ def get_response_llm(llm, vectorstore_faiss, query):
     return answer['answer']
 
 
-# llms = [get_llama3_llm, get_titan_lite_llm, get_mistral_llm, get_claude_llm]
-
-# questions = [
-
-#     "Where is Ranga Hande currently located?",
-#     "What is Ranga Hande's profession?",
-#     "What projects has Ranga Hande worked on?",
-#     "Where did Ranga Hande study?",
-#     "What are Ranga Hande's areas of expertise?",
-#     "Has Ranga Hande published any research papers or articles on 'Medium' or 'LinkedIn'?"
-# ]
-
-# for user_question in questions:
-#     print(f"Question: {user_question}")
-#     print("-" * 50)
-
-#     for llm_func in llms:
-#         print(f"Using LLM function: {llm_func.__name__}")  # Print the function name
-#         llm = llm_func()
-#         result = get_response_llm(llm, faiss_index, user_question)
-#         print("Result:")
-#         print(result)
-#         print("\n" + "-"*50 + "\n")  # Add a separator between results
-
-#     print("\n" + "="*50 + "\n")  # Add a bigger separator between questions
-
-
 def main():
     st.set_page_config("Chat pdf")
-    st.header("Chat with pdf using AWS bedrock about your resume.")
+    st.header("Q-and-A Chatbot: Chat with your resume pdf using AWS bedrock.")
 
     user_question = st.text_input("Ask a question from the pdf files")
 
@@ -179,7 +148,7 @@ def main():
                 docs = data_ingestion()
                 get_vector_store(docs)
                 st.success("Done")
-    if st.button("titan_lite Output"):
+    if st.button("titan_lite Output:"):
         with st.spinner("Processing...."):
             faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings, allow_dangerous_deserialization=True)
             llm = get_titan_lite_llm()
@@ -187,7 +156,7 @@ def main():
             st.write(get_response_llm(llm, faiss_index, user_question))
             st.success("Done")
 
-    if st.button("mistral Output"):
+    if st.button("mistral Output:"):
         with st.spinner("Processing...."):
             faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings, allow_dangerous_deserialization=True)
             llm = get_mistral_llm()
@@ -195,7 +164,7 @@ def main():
             st.write(get_response_llm(llm, faiss_index, user_question))
             st.success("Done")
 
-    if st.button("claude Output"):
+    if st.button("claude Output:"):
         with st.spinner("Processing...."):
             faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings, allow_dangerous_deserialization=True)
             llm = get_claude_llm()
@@ -203,7 +172,7 @@ def main():
             st.write(get_response_llm(llm, faiss_index, user_question))
             st.success("Done")
 
-    if st.button("llama3 Output"):
+    if st.button("llama3 Output:"):
         with st.spinner("Processing...."):
             faiss_index = FAISS.load_local("faiss_index", bedrock_embeddings, allow_dangerous_deserialization=True)
             llm = get_llama3_llm()
