@@ -48,7 +48,7 @@ Then in the **`Generation`** Phase, the user's prompt is expanded to include the
 
 ## Dataset
 
-The project utilizes resume documents in PDF format as a knowledge base, stored in the **`data`** directory. A sample set of diverse resumes is provided for testing and demonstration.
+The project utilizes resume document in PDF format as a knowledge base, stored in the **`data`** directory. A sample resume is provided for testing and demonstration.
 
 Users can expand the dataset by adding or replacing PDF files in this directory to suit specific use cases. Ensure compliance with data privacy regulations when using real resumes containing personal information.
 
@@ -125,5 +125,5 @@ streamlit run app.py
     - Click on `Vectors Update` button.
     - Type your question and then click LLM output buttons one at a time to get answers.
 
-    ![q-and-q-chatbot-streamlit](images/q-and-q-chatbot-streamlit.png)
+    ![q-and-q-chatbot-streamlit](images/q-and-q-chatbot-streamlit-1.png)
 
